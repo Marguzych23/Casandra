@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.kpfu.itis.way.models.*;
 import ru.kpfu.itis.way.repository.*;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
@@ -23,7 +24,7 @@ public class BenchmarkService {
 
         int transactionCount = 1000;
         for (int i = 0; i < transactionCount; i++) {
-            String imprint = generateImprint();
+            String imprint = generateId();
 
             completedWayRepository.save(generateCompletedWayModelWithRandomData(imprint));
         }
@@ -41,7 +42,7 @@ public class BenchmarkService {
         long start = System.currentTimeMillis();
 
         for (int i = 0; i < transactionCount; i++) {
-            String imprint = generateImprint();
+            String imprint = generateId();
 
             imprintRepository.save(generateImprintModelWithRandomData(imprint));
 
@@ -61,11 +62,10 @@ public class BenchmarkService {
     private CompletedWay generateCompletedWayModelWithRandomData(String imprint) {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
-        long aDay = TimeUnit.DAYS.toMillis(1);
         long now = new Date().getTime();
 
         return CompletedWay.builder()
-                .id(UUID.randomUUID().toString() + UUID.randomUUID().toString() + new Date().getTime())
+                .id(generateId())
                 .imprint(imprint)
                 .way(imprint + imprint + imprint)
                 .isFirst(random.nextBoolean())
@@ -75,8 +75,6 @@ public class BenchmarkService {
     }
 
     private UncompletedWay generateUncompletedWayModelWithRandomData(String imprint) {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-
         return UncompletedWay.builder()
                 .imprint(imprint)
                 .way(imprint + imprint + imprint)
@@ -86,12 +84,14 @@ public class BenchmarkService {
 
     private Imprint generateImprintModelWithRandomData(String imprint) {
         return Imprint.builder()
-                .id(UUID.randomUUID().toString() + UUID.randomUUID().toString() + new Date().getTime())
+                .id(generateId())
                 .imprint(imprint)
                 .build();
     }
 
-    private String generateImprint() {
-        return UUID.randomUUID().toString() + UUID.randomUUID().toString();
+    private String generateId() {
+        return UUID.randomUUID().toString()
+                + UUID.randomUUID().toString()
+                + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
     }
 }
