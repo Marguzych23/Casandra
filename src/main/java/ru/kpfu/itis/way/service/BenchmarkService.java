@@ -69,8 +69,8 @@ public class BenchmarkService {
                 .imprint(imprint)
                 .way(imprint + imprint + imprint)
                 .isFirst(random.nextBoolean())
-                .startTime(new Date(now - random.nextInt(0, 100) * 365 * 100))
-                .endTime(new Date(now - random.nextInt(0, 100) * 365 * 100))
+                .startTime(new Date(now - random.nextLong(0, 100) * 365 * 100))
+                .endTime(new Date(now - random.nextLong(0, 100) * 365 * 100))
                 .build();
     }
 
