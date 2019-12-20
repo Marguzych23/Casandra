@@ -21,7 +21,7 @@ public class BenchmarkService {
     public Double doBenchmarkOneTable() {
         long start = System.currentTimeMillis();
 
-        int transactionCount = 100000;
+        int transactionCount = 1000;
         for (int i = 0; i < transactionCount; i++) {
             String imprint = generateImprint();
 
