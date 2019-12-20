@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.kpfu.itis</groupId>
-    <artifactId>targeted-advertising</artifactId>
     <version>0.0.1</version>
-    <name>targeted-advertising</name>
+    <artifactId>user-way</artifactId>
+    <name>user-way</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
