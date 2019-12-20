@@ -1,11 +1,11 @@
-package ru.kpfu.itis.advertising;
+package ru.kpfu.itis.way;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
-import ru.kpfu.itis.advertising.service.BenchmarkService;
+import ru.kpfu.itis.way.service.BenchmarkService;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,13 +13,13 @@ import java.util.Date;
 
 @SpringBootApplication
 @EnableCassandraRepositories
-public class TargetedAdvertisingApplication implements CommandLineRunner {
+public class UserWayApplication implements CommandLineRunner {
 
     @Autowired
     private BenchmarkService benchmarkService;
 
     public static void main(String[] args) {
-        SpringApplication.run(TargetedAdvertisingApplication.class, args);
+        SpringApplication.run(UserWayApplication.class, args);
     }
 
     @Override
