@@ -65,7 +65,7 @@ public class BenchmarkService {
         long now = new Date().getTime();
 
         return CompletedWay.builder()
-                .id(random.nextLong())
+                .id(UUID.randomUUID().toString() + UUID.randomUUID().toString() + new Date().getTime())
                 .imprint(imprint)
                 .way(imprint + imprint + imprint)
                 .isFirst(random.nextBoolean())
@@ -86,6 +86,7 @@ public class BenchmarkService {
 
     private Imprint generateImprintModelWithRandomData(String imprint) {
         return Imprint.builder()
+                .id(UUID.randomUUID().toString() + UUID.randomUUID().toString() + new Date().getTime())
                 .imprint(imprint)
                 .build();
     }

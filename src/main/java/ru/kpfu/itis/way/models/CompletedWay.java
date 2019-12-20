@@ -13,7 +13,7 @@ import java.util.Date;
 public class CompletedWay {
 
     @PrimaryKey
-    private Long id;
+    private String id;
 
     private String imprint;
     private String way;

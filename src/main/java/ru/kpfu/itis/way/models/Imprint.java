@@ -11,7 +11,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class Imprint {
 
     @PrimaryKey
-    private Long id;
+    private String id;
 
     private String imprint;
 }
