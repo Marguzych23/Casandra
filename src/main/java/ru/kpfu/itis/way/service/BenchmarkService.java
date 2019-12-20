@@ -65,6 +65,7 @@ public class BenchmarkService {
         long now = new Date().getTime();
 
         return CompletedWay.builder()
+                .id(random.nextLong())
                 .imprint(imprint)
                 .way(imprint + imprint + imprint)
                 .isFirst(random.nextBoolean())
