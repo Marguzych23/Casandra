@@ -62,15 +62,13 @@ public class BenchmarkService {
     private CompletedWay generateCompletedWayModelWithRandomData(String imprint) {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
-        long now = new Date().getTime();
-
         return CompletedWay.builder()
                 .id(generateId())
                 .imprint(imprint)
                 .way(imprint + imprint + imprint)
                 .isFirst(random.nextBoolean())
-                .startTime(new Date(now - random.nextLong(0, 100) * 365 * 100))
-                .endTime(new Date(now - random.nextLong(0, 100) * 365 * 100))
+                .startTime(new Date().toString())
+                .endTime(new Date().toString())
                 .build();
     }
 

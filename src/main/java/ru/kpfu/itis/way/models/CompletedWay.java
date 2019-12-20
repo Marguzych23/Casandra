@@ -18,6 +18,6 @@ public class CompletedWay {
     private String imprint;
     private String way;
     private Boolean isFirst;
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
 }
