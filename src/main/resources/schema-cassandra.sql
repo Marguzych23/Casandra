@@ -19,5 +19,5 @@ CREATE TABLE  completedway(
 
 CREATE TABLE  imprint(
 	id text PRIMARY KEY,
-	imprint VARCHAR(64),
+	imprint text,
 );
