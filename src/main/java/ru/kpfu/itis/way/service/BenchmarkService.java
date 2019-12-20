@@ -36,7 +36,7 @@ public class BenchmarkService {
     }
 
     public Double doBenchmark() {
-        int transactionCount = 100000;
+        int transactionCount = 10000;
         int completedWayTransactionCount = 5;
         int uncompletedWayTransactionCount = 1;
         int imprintWayTransactionCount = 1;
