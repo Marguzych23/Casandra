@@ -24,7 +24,7 @@ public class UserWayApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Double tps = benchmarkService.doBenchmarkOneTable();
+        Double tps = benchmarkService.doBenchmark();
 
         String filename = "cassandra" + new Date().getTime() + ".txt";
         try (FileWriter writer = new FileWriter(filename, false)) {
