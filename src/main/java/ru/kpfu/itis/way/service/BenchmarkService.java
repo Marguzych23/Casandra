@@ -22,11 +22,13 @@ public class BenchmarkService {
     public Double doBenchmarkOneTable() {
         long start = System.currentTimeMillis();
 
-        int transactionCount = 1000;
+        int transactionCount = 10;
         for (int i = 0; i < transactionCount; i++) {
             String imprint = generateId();
 
             completedWayRepository.save(generateCompletedWayModelWithRandomData(imprint));
+
+            System.out.println(imprint);
         }
         long stop = System.currentTimeMillis();
 
