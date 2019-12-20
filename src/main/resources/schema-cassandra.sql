@@ -1,4 +1,4 @@
-create keyspace if not exists targeted_advertising
+create keyspace if not exists user_way
 with replication = {'class': 'SimpleStrategy', 'replication_factor': 1}
 and durable_writes = true;
 
