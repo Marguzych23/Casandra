@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.Date;
 
 @SpringBootApplication
-@EnableCassandraRepositories
 public class UserWayApplication implements CommandLineRunner {
 
     @Autowired

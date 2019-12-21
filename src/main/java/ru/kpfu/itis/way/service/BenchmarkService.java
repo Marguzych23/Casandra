@@ -3,7 +3,6 @@ package ru.kpfu.itis.way.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.kpfu.itis.way.models.*;
-import ru.kpfu.itis.way.repository.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -90,21 +89,6 @@ public class BenchmarkService {
                 .isFirst(random.nextBoolean())
                 .startTime(new Date().toString())
                 .endTime(new Date().toString())
-                .build();
-    }
-
-    private UncompletedWay generateUncompletedWayModelWithRandomData(String imprint) {
-        return UncompletedWay.builder()
-                .imprint(imprint)
-                .way(imprint + imprint + imprint)
-                .startTime(new Date())
-                .build();
-    }
-
-    private Imprint generateImprintModelWithRandomData(String imprint) {
-        return Imprint.builder()
-                .id(generateId())
-                .imprint(imprint)
                 .build();
     }
 
