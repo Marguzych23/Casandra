@@ -38,13 +38,8 @@ public class BenchmarkService {
 
     public List<CompletedWay> generateData() {
         List<CompletedWay> completedWayList = new ArrayList<>();
-        int transactionCount = 1000000;
+        int transactionCount = 30000;
         for (int i = 0; i < transactionCount; i++) {
-            try {
-                TimeUnit.MILLISECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             String imprint = generateId();
 
             completedWayList.add(generateCompletedWayModelWithRandomData(imprint));
